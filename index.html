@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futuristic Resource Directory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Near Your Area Resource Directory</h1>
+    <p>Locate hospitals, NGOs, food banks with images & info</p>
+    <h6>NOTE : this data is only for talwandi-sabo area</h6>
+  </header>
+   
+  <!-- Search + Filter -->
+  <section class="search-section">
+    <input type="text" id="searchInput" placeholder="🔍 Search resources...">
+    <select id="filterSelect">
+      <option value="all">All</option>
+      <option value="hospital">Hospitals</option>
+      <option value="ngo">NGOs</option>
+      <option value="food">Food Banks</option>
+      <option value="other">other</option>
+    </select>
+  </section>
+  
+<!-- Clear All Button -->
+<section class="clear-section">
+  <button id="clearAllBtn">🧹 Clear All Resources</button>
+</section>
+
+  <!-- Add Resource Form -->
+  <section class="add-section">
+    <h2>➕ Add New Resource</h2>
+    <form id="addResourceForm">
+      <input type="text" id="resourceName" placeholder="Resource Name" required>
+      <select id="resourceType" required>
+        <option value="">Select Type</option>
+        <option value="hospital">Hospital</option>
+        <option value="ngo">NGO</option>
+        <option value="food">Food Bank</option>
+        <option value="other">other</option>
+      </select>
+      <input type="text" id="resourceContact" placeholder="Contact Info" required>
+      <input type="text" id="resourceLocation" placeholder="Location / Google Maps Link" required>
+      <input type="file" id="resourceImage" accept="image/*">
+      <button type="submit">Add Resource</button>
+    </form>
+  </section>
+<hr
+  <!-- Resource List -->
+  <section id="resourceList" class="resource-list"></section>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Edit Resource</h2>
+      <form id="editResourceForm">
+        <input type="text" id="editName" required>
+        <select id="editType" required>
+          <option value="hospital">Hospital</option>
+          <option value="ngo">NGO</option>
+          <option value="food">Food Bank</option>
+        </select>
+        <input type="text" id="editContact" required>
+        <input type="text" id="editLocation" required>
+        <input type="file" id="editImage" accept="image/*">
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
